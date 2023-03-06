@@ -27,13 +27,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     svg {
       height: 3rem;
       font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
         sans-serif;
-      padding: 2rem;
+      padding: 2rem 0;
       fill: #e50914;
       z-index: 5;
+      @media (max-width: 1076px) {
+        height: 2rem;
+        padding: 1rem 0;
+        margin: auto auto 0 0;
+      }
     }
     button.signup {
       color: white;

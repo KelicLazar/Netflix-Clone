@@ -8,6 +8,7 @@
   align-items: center;
   padding: 4rem 0;
   border-bottom: 8px solid #303030;
+  text-align: center;
   h3 {
     font-weight: 400;
   }
@@ -32,6 +33,9 @@
     margin: auto;
     position: relative;
     border: none;
+    @media (max-width: 1076px) {
+      font-size: large;
+    }
     svg {
       margin: 0;
       // width: 100%;
@@ -43,6 +47,12 @@
       right: calc(15px + 0.5rem);
 
       margin: auto;
+      @media (max-width: 1076px) {
+        width: 20px;
+        height: 20px;
+        top: calc(10px + 0.5rem);
+        right: calc(10px + 0.5rem);
+      }
     }
     .svg-open {
       transform: rotate(0);
@@ -61,6 +71,9 @@
     font-size: x-large;
     text-align: left;
     box-sizing: border-box;
+    @media (max-width: 1076px) {
+      font-size: large;
+    }
   }
   .open {
     max-height: 1500px;

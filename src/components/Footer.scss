@@ -23,11 +23,15 @@
   li {
     height: 1rem;
     width: 25%;
+    width: fit-content;
     font-size: small;
     margin: 0.5rem 0;
-    word-break: keep-all;
+    white-space: nowrap;
     @media (max-width: 1076px) {
       width: 30%;
+    }
+    @media (max-width: 800px) {
+      width: 50%;
     }
   }
 }
