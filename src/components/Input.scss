@@ -1,0 +1,50 @@
+.inputContainer {
+  position: relative;
+  //   margin: 0;
+  width: 100%;
+
+  //   width: 100%;
+  @media (max-width: 1076px) {
+    width: 80%;
+    margin: auto;
+  }
+
+  label {
+    position: absolute;
+    top: 1.6rem;
+    left: 2rem;
+    transition: all 0.2s ease-in-out;
+    color: #8c8c8c;
+    font-weight: 500;
+    font-size: 1.4rem;
+    pointer-events: none;
+  }
+  input:not(:placeholder-shown) ~ label,
+  input:focus ~ label {
+    top: 0.3rem;
+    font-size: 1rem;
+  }
+
+  input {
+    outline: none;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 1.4rem;
+    border-right: 1px solid #8c8c8c;
+    width: 100%;
+    padding: 1.8rem 1rem 1rem 1rem;
+  }
+  input.error {
+    border-bottom: 2px solid #ffa00b;
+  }
+  .inputError {
+    position: absolute;
+    color: #ffa00b;
+    width: fit-content;
+    @media (max-width: 1076px) {
+      position: relative;
+      left: 0;
+    }
+  }
+}

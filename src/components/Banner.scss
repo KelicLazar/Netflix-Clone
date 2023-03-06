@@ -1,0 +1,49 @@
+.banner {
+  height: fit-content;
+  position: relative;
+  height: fit-content;
+  max-height: 800px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0,
+      transparent 60%,
+      rgba(0, 0, 0, 0.8)
+    );
+    box-sizing: border-box;
+    border-bottom: 8px solid #222222;
+  }
+  .nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    svg {
+      height: 3rem;
+      font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+        sans-serif;
+      padding: 2rem;
+      fill: #e50914;
+      z-index: 5;
+    }
+    button.signup {
+      color: white;
+      background-color: #e50914;
+      height: fit-content;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-size: medium;
+      font-weight: 200;
+      border: none;
+    }
+  }
+}

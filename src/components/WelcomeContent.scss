@@ -1,0 +1,35 @@
+.content {
+  width: 80%;
+  max-width: 60rem;
+  height: fit-content;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin: 2rem auto 0;
+  padding-top: 4rem;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1076px) {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: xx-large;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+  }
+  h2 {
+    font-size: x-large;
+    font-weight: 600;
+    color: red;
+    text-shadow: 1px 1px 2px white;
+  }
+  h3 {
+    font-size: large;
+    font-weight: 400;
+    margin-top: 3rem;
+  }
+}
