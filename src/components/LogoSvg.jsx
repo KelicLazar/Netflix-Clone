@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const LogoSvg = () => {
+  const navigate = useNavigate();
   return (
     <svg
+      onClick={() => {
+        navigate("/welcome");
+      }}
       viewBox="0 0 111 30"
       data-uia="netflix-logo"
       class="svg-icon svg-icon-netflix-logo"

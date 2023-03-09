@@ -8,28 +8,97 @@
   justify-content: space-around;
   text-align: center;
   margin: 2rem auto 0;
-  padding-top: 4rem;
+  padding: 4rem;
   align-items: center;
   justify-content: center;
-  @media (max-width: 1076px) {
-    width: 90%;
-  }
+  clear: both;
+  position: relative;
+  margin: 2rem auto 5rem auto;
+  // top: 10%;
+  // transform: translateY(-10%);
 
   h1 {
-    font-size: xx-large;
-    font-weight: 800;
+    font-size: 4rem;
+    max-width: 800px;
+    font-weight: 600;
+    font-family: Netflix Sans "Smokum", cursive;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
   }
   h2 {
-    font-size: x-large;
-    font-weight: 600;
-    color: red;
-    text-shadow: 1px 1px 2px white;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 1rem;
   }
   h3 {
-    font-size: large;
+    font-size: 1rem;
     font-weight: 400;
-    margin-top: 3rem;
+    padding: 1rem 0;
+    margin: 0;
+  }
+  @media (max-width: 1076px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    // margin: 1rem auto;
+    padding: 1rem;
+    // margin: 1rem;
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      padding: 0;
+      margin: 0;
+    }
+    h3 {
+      font-size: 0.8rem;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
+.form {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+  max-width: 650px;
+  word-wrap: none;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.getStarted {
+  border: 0;
+  padding: 1rem;
+  color: white;
+  background-color: #e50914;
+  font-size: xx-large;
+  font-weight: 500;
+  position: relative;
+  word-wrap: none;
+  min-width: fit-content;
+  width: 30%;
+
+  font: {
+    size: 1.4rem;
+    font-weight: 800;
+  }
+  @media (max-width: 1076px) {
+    margin: 0rem;
+    padding: 0.8rem;
+    font-size: large;
+    width: fit-content;
   }
 }

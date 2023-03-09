@@ -1,10 +1,6 @@
 .inputContainer {
   position: relative;
   width: 100%;
-  @media (max-width: 1076px) {
-    width: 80%;
-    margin: auto;
-  }
 
   label {
     position: absolute;
@@ -15,6 +11,7 @@
     font-weight: 500;
     font-size: 1.4rem;
     pointer-events: none;
+    left: 1rem;
   }
   input:not(:placeholder-shown) ~ label,
   input:focus ~ label {
@@ -39,9 +36,25 @@
     position: absolute;
     color: #ffa00b;
     width: fit-content;
-    @media (max-width: 1076px) {
+    @media (max-width: 800px) {
       position: relative;
       left: 0;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 80%;
+    margin: auto;
+    input {
+      padding: 1rem;
+    }
+    label {
+      font-size: 1rem;
+      top: 1rem;
+    }
+    input:not(:placeholder-shown) ~ label,
+    input:focus ~ label {
+      font-size: 0.6rem;
+      top: 0.2rem;
     }
   }
 }

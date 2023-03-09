@@ -4,10 +4,23 @@ import PromoItem from "../components/PromoItem";
 import { faqDummyData } from "../utils/faq-dummy-data";
 import WelcomeContent from "../components/WelcomeContent";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 const Welcome = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <Banner actions={<button className="signup">Sign In</button>}>
+      <Banner
+        actions={
+          <button
+            onClick={() => {
+              navigate("/signin");
+            }}
+            className="signup"
+          >
+            Sign In
+          </button>
+        }
+      >
         <WelcomeContent />
       </Banner>
       <PromoItem

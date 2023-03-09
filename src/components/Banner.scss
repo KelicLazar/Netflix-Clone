@@ -1,11 +1,22 @@
 .banner {
   height: fit-content;
   position: relative;
-  height: fit-content;
-  max-height: 800px;
   box-sizing: border-box;
+  background-color: green;
+  padding: 0;
   overflow: hidden;
 
+  .imgDiv {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
   .gradient {
     position: absolute;
     top: 0;
@@ -18,27 +29,39 @@
       transparent 60%,
       rgba(0, 0, 0, 0.8)
     );
+    // background-image: linear-gradient(
+    //   180deg,
+    //   rgba(0, 0, 0, 0.8) 0,
+    //   transparent 50%,
+    //   rgba(0, 0, 0, 0.877)
+    // );
+
     box-sizing: border-box;
     border-bottom: 8px solid #222222;
   }
+
   .nav {
-    width: 90%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding-top: 1.2rem;
+    top: 0;
+    // background-color: black;
 
     svg {
       height: 3rem;
       font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
         sans-serif;
-      padding: 2rem 0;
+      // padding: 2rem;
       fill: #e50914;
       z-index: 5;
       @media (max-width: 1076px) {
         height: 2rem;
-        padding: 1rem 0;
-        margin: auto auto 0 0;
+        // padding: 1rem 0;
+        // margin: auto auto 0 0;
       }
     }
     button.signup {
@@ -48,8 +71,18 @@
       padding: 0.6rem 1.2rem;
       border-radius: 5px;
       font-size: medium;
-      font-weight: 200;
+      font-weight: 400;
       border: none;
+      @media (max-width: 1076px) {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+
+  .nav.signInNav {
+    @media (max-width: 800px) {
+      background-color: black;
+      width: 100%;
     }
   }
 }
