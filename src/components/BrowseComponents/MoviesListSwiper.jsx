@@ -22,7 +22,7 @@ const MoviesListSwiper = () => {
         grabCursor={true}
         freeMode={true}
         pagination={pagination}
-        cssMode={true}
+        // cssMode={true}
         spaceBetween={20}
         slidesPerView={7.4}
         slidesPerGroup={6}
