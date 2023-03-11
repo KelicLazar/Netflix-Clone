@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Input from "../components/Input";
 import "./SignIn.scss";
 const SignIn = () => {
+  const navigate = useNavigate();
+
+  const signInHandler = () => {
+    navigate("/home");
+  };
   return (
     <div className="signInPage">
       <Banner>
@@ -10,7 +16,7 @@ const SignIn = () => {
           <h1>Sign In</h1>
           <Input id="email" label="Email address" type="email" />
           <Input id="password" label="Password" type="password" />
-          <button>Sign In</button>
+          <button onClick={signInHandler}>Sign In</button>
           <div className="checkboxContainer">
             <div>
               <input type="checkbox" id="rememberMe" />

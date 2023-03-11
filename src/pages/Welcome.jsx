@@ -66,10 +66,10 @@ const Welcome = () => {
       <Faq questions={faqDummyData} />
 
       <Footer />
-      <br />
+      {/* <br />
       <br />
       <br></br>
-      <br></br>
+      <br></br> */}
     </>
   );
 };

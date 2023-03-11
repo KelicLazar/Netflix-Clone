@@ -1,6 +1,5 @@
 import LogoSvg from "./LogoSvg";
 import "./Banner.scss";
-import Footer from "./Footer";
 
 const Banner = ({ actions, children }) => {
   return (
