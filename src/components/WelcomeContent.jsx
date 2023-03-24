@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import "./WelcomeContent.scss";
 
 const WelcomeContent = () => {
+  const navigate = useNavigate();
   return (
     <div className="content">
       <h1>Unlimited movies, TV shows, and more.</h1>
@@ -12,7 +14,12 @@ const WelcomeContent = () => {
       <div className="form">
         <Input id="email" label="Email address" type="email" />
 
-        <button className="getStarted">
+        <button
+          className="getStarted"
+          onClick={() => {
+            navigate("/signin");
+          }}
+        >
           Get Started
           <i class="uil uil-angle-right-b"></i>
         </button>

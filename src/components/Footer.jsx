@@ -1,8 +1,9 @@
 import "./Footer.scss";
+import LanguageMenu from "./LanguageMenu";
 
-const Footer = ({ signIn }) => {
+const Footer = ({ signIn, browse }) => {
   return (
-    <div className="footerContainer">
+    <div className={browse ? " footerContainer browse" : "footerContainer"}>
       <p>Questions? Contact us.</p>
       <ul>
         <li>FAQ</li>
@@ -21,6 +22,7 @@ const Footer = ({ signIn }) => {
         <li>Legal Notices</li>
         <li>Only on Netflix</li>
       </ul>
+      <LanguageMenu />
       <p>Netflix Serbia</p>
     </div>
   );

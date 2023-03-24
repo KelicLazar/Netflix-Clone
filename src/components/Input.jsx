@@ -11,12 +11,20 @@ const Input = ({ id, label, type }) => {
   };
 
   const inputBlurHandler = () => {
-    if (!value.includes("@")) {
-      setInputError("Email is required!");
-    } else if (value.includes("@") && !/^\S+@\S+\.\S+$/.test(value)) {
-      setInputError("Please enter a valid email address");
-    } else {
-      setInputError("");
+    if (type === "password") {
+      if (value.length < 4 || value.length > 60) {
+        setInputError(
+          "Your password must contain between 4 and 60 characters."
+        );
+      }
+    } else if (type === "email") {
+      if (!value.includes("@")) {
+        setInputError("Email is required!");
+      } else if (value.includes("@") && !/^\S+@\S+\.\S+$/.test(value)) {
+        setInputError("Please enter a valid email address");
+      } else {
+        setInputError("");
+      }
     }
   };
   return (
@@ -30,7 +38,9 @@ const Input = ({ id, label, type }) => {
         placeholder=" "
       />
       <label htmlFor={id}>{label}</label>
-      <p className="inputError">{inputError}</p>
+      <p className="inputError">
+        {inputError && <i class="uil uil-times-circle"></i>} {inputError}
+      </p>
     </div>
   );
 };

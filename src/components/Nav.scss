@@ -1,0 +1,83 @@
+.nav {
+  display: flex;
+  margin: auto;
+  position: relative;
+  min-width: fit-content;
+  padding: 1.4rem;
+  box-sizing: border-box;
+
+  .rightSide {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  svg.svgLogo {
+    margin-right: auto;
+    height: 3rem;
+  }
+
+  @media (max-width: 800px) {
+    // & > * {
+    //   margin: 10px;
+    //   background-color: green;
+    //   width: 30%;
+    // }
+  }
+}
+.nav.welcome {
+  width: 64%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+
+    svg.svgLogo {
+      // height: 1.6rem;
+      // width: 33%;
+      height: 2rem;
+    }
+    #languageButton {
+      width: fit-content;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 8%;
+
+      span {
+        margin: 0;
+        padding: 0;
+        width: fit-content;
+      }
+      span:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+.nav.signin {
+}
+
+///MUI MENU ITEM STYLES
+#languageButton {
+  border: rgba(128, 128, 128, 0.7);
+  border: 0.5px solid rgba(128, 128, 128, 0.7);
+  color: white;
+  height: 2rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  background-color: rgba(22, 22, 22, 0.7);
+  width: 130px;
+  // background-color: red;
+  padding: 0;
+}
+
+.MuiMenu-list {
+  width: 130px;
+  li {
+    width: fit-content;
+    margin: auto;
+  }
+}

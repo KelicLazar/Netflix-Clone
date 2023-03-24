@@ -15,8 +15,8 @@
   }
   ul {
     list-style: none;
-    max-width: 1050px;
-    width: 90%;
+    // max-width: 1250px;
+    width: 65%;
     padding: 0;
   }
   li {
@@ -29,31 +29,31 @@
     width: 100%;
     text-align: left;
     background-color: #303030;
-    font-size: xx-large;
-    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    padding: 2rem;
     margin: auto;
     position: relative;
     border: none;
-    @media (max-width: 1076px) {
-      font-size: large;
-    }
+    // @media (max-width: 1076px) {
+    //   font-size: large;
+    // }
     svg {
       margin: 0;
       // width: 100%;
       // height: 100%;
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       position: absolute;
-      top: calc(15px + 0.5rem);
-      right: calc(15px + 0.5rem);
+      top: calc(15px + 1rem);
+      right: calc(15px + 1rem);
 
       margin: auto;
-      @media (max-width: 1076px) {
-        width: 20px;
-        height: 20px;
-        top: calc(10px + 0.5rem);
-        right: calc(10px + 0.5rem);
-      }
+      // @media (max-width: 1076px) {
+      //   width: 20px;
+      //   height: 20px;
+      //   top: calc(10px + 0.5rem);
+      //   right: calc(10px + 0.5rem);
+      // }
     }
     .svg-open {
       transform: rotate(0);

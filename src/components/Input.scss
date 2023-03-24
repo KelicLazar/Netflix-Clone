@@ -1,7 +1,7 @@
 .inputContainer {
   position: relative;
   width: 100%;
-
+  margin-right: 1%;
   label {
     position: absolute;
     top: 1.4rem;
@@ -12,6 +12,7 @@
     font-size: 1.4rem;
     pointer-events: none;
     left: 1rem;
+    // color: #8c8c8c !important;
   }
   input:not(:placeholder-shown) ~ label,
   input:focus ~ label {
@@ -28,13 +29,17 @@
     border-right: 1px solid #8c8c8c;
     width: 100%;
     padding: 1.8rem 1rem 1rem 1rem;
+    background-color: rgba(22, 22, 22, 0.7);
+    border: 1px solid rgba(128, 128, 128, 0.7);
+    border-radius: 0.25rem;
+    color: white;
   }
   input.error {
-    border-bottom: 2px solid #ffa00b;
+    border: 2px solid #e50914;
   }
   .inputError {
     position: absolute;
-    color: #ffa00b;
+    color: #e50914;
     width: fit-content;
     @media (max-width: 800px) {
       position: relative;

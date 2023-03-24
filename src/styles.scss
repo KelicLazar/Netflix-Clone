@@ -11,19 +11,47 @@ body {
   background-color: #141414;
 }
 
-.test {
-  // background-image: linear-gradient(
-  //   0deg,
-  //   rgba(0, 0, 0, 0.8) 0,
-  //   transparent 60%,
-  //   rgba(0, 0, 0, 0.8)
-  // );
-  // max-height: 700px;
-  // overflow: hidden;
-  // height: 700px;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 !important;
+}
 
-  // img {
-  //   object-fit: cover;
-  //   background-position: right;
-  // }
+.MuiSpeedDial-root {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  button {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #e5091421;
+  }
+  button:active,
+  button:hover {
+    background-color: #e5091460;
+  }
+  & > button:first-of-type {
+    background-color: red;
+  }
+  @media (max-width: 800px) {
+    bottom: 20px;
+    right: 20px;
+    button {
+      width: 50px;
+      height: 50px;
+      font-size: 0.6rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+* {
+  font-family: Helvetica !important;
 }

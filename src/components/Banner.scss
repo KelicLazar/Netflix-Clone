@@ -2,7 +2,6 @@
   height: fit-content;
   position: relative;
   box-sizing: border-box;
-  background-color: green;
   padding: 0;
   overflow: hidden;
 
@@ -41,25 +40,25 @@
   }
 
   .nav {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 1.2rem;
-    top: 0;
-    box-sizing: border-box;
+    // width: 64%;
+    // margin: auto;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // position: relative;
+    // padding: 1.4rem;
+    // top: 0;
+    // box-sizing: border-box;
 
-    svg {
-      height: 3rem;
+    svg.svgLogo {
+      // height: 3rem;
       font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
         sans-serif;
       // padding: 2rem;
       fill: #e50914;
       z-index: 5;
       @media (max-width: 1076px) {
-        height: 2rem;
+        // height: 2rem;
         // padding: 1rem 0;
         // margin: auto auto 0 0;
       }
@@ -67,8 +66,9 @@
     button.signup {
       color: white;
       background-color: #e50914;
-      height: fit-content;
-      padding: 0.6rem 1.2rem;
+      box-sizing: border-box;
+      height: 2rem;
+      padding: 0.2rem 0.8rem;
       border-radius: 5px;
       font-size: medium;
       font-weight: 400;
@@ -82,6 +82,7 @@
   .nav.signInNav {
     @media (max-width: 800px) {
       background-color: black;
+
       width: 100%;
     }
   }

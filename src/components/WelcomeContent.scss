@@ -20,14 +20,20 @@
   h1 {
     font-size: 4rem;
     max-width: 800px;
-    font-weight: 600;
-    font-family: Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    font-weight: 900;
+    // font-family: "Netflix-Sans";
+    // font-family: "Netflix Font", sans-serif;
+    // font-family: "Netflix Sans";
+    // font-weight: 900;
+    // font-weight: 900 !important;
+    // font-family: Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
     text-align: center;
     margin: 0 auto;
   }
   h2 {
     font-size: 1.8rem;
     font-weight: 500;
+    font-family: "Netflix-Sans";
     margin: 1rem;
   }
   h3 {
@@ -97,6 +103,7 @@
   word-wrap: none;
   min-width: fit-content;
   width: 30%;
+  border-radius: 0.25rem;
 
   font: {
     size: 1.4rem;

@@ -1,84 +1,127 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Keyboard, FreeMode } from "swiper";
+import { Navigation, Pagination, Keyboard, FreeMode, Zoom } from "swiper";
 import { movies as moviesList } from "../../utils/movies-dummy-data";
 import "swiper/css";
-import "swiper/css/scrollbar";
+// import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useState } from "react";
+// import "swiper/css/zoom";
+import { useMemo, useState } from "react";
+// import "../../pages/Browse.scss";
+import "./MoviesListSwiper.scss";
+import { top10s } from "./Top10Svgs";
+import MoreInfo from "./MoreInfo";
 
-const MoviesListSwiper = () => {
-  const [movies, setMovies] = useState(moviesList);
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="pageNum ' + className + '"></span>';
-    },
+const pagination = {
+  clickable: true,
+  renderBullet: function (index, className) {
+    return '<span class="pageNum ' + className + '"></span>';
+  },
+};
+
+const MoviesListSwiper = ({ continueWatching, top10, title }) => {
+  const [movies, setMovies] = useState(
+    top10 ? moviesList.slice(0, 10) : moviesList
+  );
+  const [timer, setTimer] = useState();
+
+  const MouseOverVideoHandler = (event) => {
+    const timeOut = setTimeout(() => {
+      event.target.play();
+    }, 400);
+
+    setTimer(timeOut);
+    timeOut();
+  };
+  const MouseLeaveVideoHandler = (event) => {
+    event.target.currentTime = 0;
+    event.target.load();
+
+    clearTimeout(timer);
+    setTimer(null);
   };
   return (
     <div className="moviesListSwiper">
-      <h2 className="movieListTitle">Continue Watching</h2>
+      <h2 className="movieListTitle">{title}</h2>
       <Swiper
-        grabCursor={true}
+        autoHeight={true}
         freeMode={true}
         pagination={pagination}
-        // cssMode={true}
+        slidesPerView={2.6}
+        slidesPerGroup={2}
         spaceBetween={20}
-        slidesPerView={7.4}
-        slidesPerGroup={6}
-        // centeredSlidesBounds
-        centeredSlides
-        loop={true}
-        keyboard={{
-          enabled: true,
+        // loop={true}
+        breakpoints={{
+          "@0.50": {
+            slidesPerGroup: 1,
+            slidesPerView: 1.8,
+          },
+          "@0.75": {
+            slidesPerView: 2.8,
+            slidesPerGroup: 2,
+          },
+          "@1.00": {
+            slidesPerView: 3.8,
+            slidesPerGroup: 3,
+          },
+          "@1.50": {
+            slidesPerView: 4.8,
+            slidesPerGroup: 4,
+          },
+          "@2.00": {
+            slidesPerView: 5.8,
+            slidesPerGroup: 5,
+          },
+          "@2.50": {
+            slidesPerView: 6.8,
+            slidesPerGroup: 6,
+          },
         }}
-        // breakpoints={{
-        //   769: {
-        //     slidesPerView: 2,
-        //     slidesPerGroup: 2,
-        //   },
-        // }}
         navigation={true}
         modules={[Keyboard, Navigation, Pagination, FreeMode]}
         className="mySwiper"
+        centerInsufficientSlides
       >
         {movies &&
           movies.map((movie, index) => {
-            console.log("movie", movie);
             return (
               <SwiperSlide className="movieItem">
-                <div style={{ zIndex: 99, background: "blue" }}>
-                  {({ isActive }) => (
-                    <div>
-                      Current slide is {isActive ? "active" : "not active"}
-                    </div>
-                  )}
-                  {({ isNext }) => (
-                    <div>
-                      Current slide is {isNext ? "active" : "not active"}
-                    </div>
-                  )}
-                  {({ isPrev }) => (
-                    <div>
-                      Current slide is {isPrev ? "active" : "not active"}
-                    </div>
-                  )}
-                  {({ isVisible }) => (
-                    <div>
-                      Current slide is {isVisible ? "active" : "not active"}
-                    </div>
-                  )}
-                </div>
                 <div className="movieItemWrapper" key={index}>
-                  <img src={`movies/${movie.img}`} alt={movie.title} />
+                  <div
+                    className={top10 ? "top10 videoWrapper" : "videoWrapper"}
+                  >
+                    {top10 && index < 10 && top10s[index]}
+
+                    <video
+                      className={top10 ? "top10" : ""}
+                      onMouseOver={MouseOverVideoHandler}
+                      onMouseLeave={MouseLeaveVideoHandler}
+                      muted
+                      poster={`movies/${movie.img}`}
+                    >
+                      <source src="video2.m4v"></source>
+                    </video>
+                  </div>
+                  <div className="moreInfoContainer">
+                    <MoreInfo continueWatching={continueWatching} />
+                    {continueWatching && (
+                      <div className="progressBar">
+                        <div
+                          style={{
+                            width: "30%",
+                          }}
+                        ></div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </SwiperSlide>
             );
           })}
-        <span className="containerStart" slot="container-start"></span>
-        <span className="containerEnd" slot="container-end"></span>
-        {/* <span slot="wrapper-start">Wrapper Start</span>
-      <span slot="wrapper-end">Wrapper End</span> */}
+        {/* <span className="containerStart" slot="container-start"></span>
+        <span className="containerEnd" slot="container-end"></span> */}
+        <span className="wrapperStart" slot="wrapper-start"></span>
+        {/* <span slot="wrapper-end">Wrapper End</span> */}
       </Swiper>
     </div>
   );

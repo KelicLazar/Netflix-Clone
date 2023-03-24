@@ -1,8 +1,10 @@
 import FaqQuestion from "./FaqQuestion";
 import Input from "./Input";
 import "./Faq.scss";
+import { useNavigate } from "react-router-dom";
 
 const Faq = ({ questions }) => {
+  const navigate = useNavigate();
   return (
     <div className="faqContainer">
       <h1>Frequently Asked Questions</h1>
@@ -17,7 +19,12 @@ const Faq = ({ questions }) => {
       <div className="form">
         <Input id="email" label="Email address" type="email" />
 
-        <button className="getStarted">
+        <button
+          onClick={() => {
+            navigate("/signin");
+          }}
+          className="getStarted"
+        >
           Get Started
           <i class="uil uil-angle-right-b"></i>
         </button>

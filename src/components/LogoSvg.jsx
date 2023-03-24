@@ -9,7 +9,7 @@ const LogoSvg = () => {
       }}
       viewBox="0 0 111 30"
       data-uia="netflix-logo"
-      class="svg-icon svg-icon-netflix-logo"
+      className="svgLogo"
       aria-hidden="true"
       focusable="false"
     >

@@ -4,21 +4,25 @@ import PromoItem from "../components/PromoItem";
 import { faqDummyData } from "../utils/faq-dummy-data";
 import WelcomeContent from "../components/WelcomeContent";
 import Footer from "../components/Footer";
+import LanguageMenu from "../components/LanguageMenu";
 import { useNavigate } from "react-router-dom";
 const Welcome = () => {
   const navigate = useNavigate();
   return (
     <>
       <Banner
-        actions={
-          <button
-            onClick={() => {
-              navigate("/signin");
-            }}
-            className="signup"
-          >
-            Sign In
-          </button>
+        navRightSide={
+          <>
+            <LanguageMenu />
+            <button
+              onClick={() => {
+                navigate("/signin");
+              }}
+              className="signup"
+            >
+              Sign In
+            </button>
+          </>
         }
       >
         <WelcomeContent />

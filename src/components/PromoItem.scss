@@ -23,7 +23,14 @@
   }
 
   .text {
-    width: 40%;
+    width: 35%;
+    .title {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+    .description {
+      font-weight: 400;
+    }
     @media (max-width: 1076px) {
       width: 90%;
       text-align: center;
@@ -43,7 +50,7 @@
       //   position: relative;
       //   width: 82%;
       //   height: auto;
-      z-index: 3;
+      z-index: 2;
       // @media (max-width: 1076px) {
       //   width: 100%;
       // }
@@ -101,7 +108,7 @@
       margin: auto;
       display: flex;
 
-      z-index: 2;
+      z-index: 1;
       &.pc {
         width: 50%;
         padding: 2rem;

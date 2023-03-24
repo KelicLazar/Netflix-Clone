@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Input from "../components/Input";
+
 import "./SignIn.scss";
 const SignIn = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const SignIn = () => {
           <button onClick={signInHandler}>Sign In</button>
           <div className="checkboxContainer">
             <div>
-              <input type="checkbox" id="rememberMe" />
+              <input defaultChecked type="checkbox" id="rememberMe" />
               <label htmlFor="rememberMe">Remember me</label>
             </div>
             <p>Need help?</p>
